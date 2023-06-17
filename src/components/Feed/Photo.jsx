@@ -1,9 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {AiFillLike, AiFillDislike} from 'react-icons/ai'
 import { comments } from './comments';
 import { userPost } from './UserPost';
 
 const Photo = () => {
+   const [like, setLike] = useState(15)
+   const [dislike, setDislike] = useState(10)
+   const [comment, setcomment] = useState(" ")
+
+   const submitComment=(e)=>{
+   }
   return (
 <>
     {
@@ -40,16 +46,17 @@ const Photo = () => {
                <div className="text-green m-auto flex">
                  <AiFillLike
                     fontSize={12}
-                    className="mx-1"
+                    className="mx-1 cursor-pointer" onClick={()=>setLike(like+1)}
                  />
-                 <span>12</span>
+                 <span className='select-none'>{like}</span>
                </div>
-               <div className="text-red m-auto flex">
+               <div className="text-red m-auto flex"  >
                     <AiFillDislike
                         fontSize={12}
-                        className="mx-1"
+                        className="mx-1 cursor-pointer"
+                        onClick={()=>setDislike(dislike+1)}
                     />
-                    <span>2</span>
+                    <span className='select-none'>{dislike}</span>
                </div>
              </div>
             </div>
@@ -82,9 +89,9 @@ const Photo = () => {
              className="w-6 h-6 rounded-full mr-3"
                 src="https://th.bing.com/th/id/OIP.YWFSHmhVvwHHmColuR-sjAHaFj?pid=ImgDet&rs=1"
              />
-             <input 
+             <input value={comment} onSubmit={submitComment}
              placeholder="Post a Comment"
-                className="border border-textgray items-center my-auto rounded-sm px-2"
+                className="border white items-center my-auto rounded-sm px-2"
              />
              </div>
            </div>
