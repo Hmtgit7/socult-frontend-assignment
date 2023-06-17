@@ -17,7 +17,7 @@ const Discover = () => {
   const added = "Added";
 
   return (
-    <div className="bg-white p-3 shadow-md hover:shadow-lg h-min  rounded-md">
+    <div className="bg-white p-3 shadow-md hover:shadow-lg h-min  rounded-md sm={}">
       <div className="text-textgray text-xl min-h  font-semibold ">
         Who to Follow
         <div className="flex my-4 py-2 " key="John">
